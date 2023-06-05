@@ -3,3 +3,4 @@ require 'config.lazy'
 require 'config.autocommands'
 require 'config.keymap'
 
+-- init.lua:
