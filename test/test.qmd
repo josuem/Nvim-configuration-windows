@@ -4,4 +4,8 @@ title: a simple test
 
 # Title 1
 
-This is a simple test 
+This is a simple test
+
+```{python}
+print("hello world")
+```
