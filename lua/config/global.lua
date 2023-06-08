@@ -1,4 +1,4 @@
-vim.g.markdown_fenced_languages = { 'html', 'python', 'bash=sh', 'R=r' }
+vim.g.markdown_fenced_languages = {'python', 'bash=sh' } --'R=r' 'html'
 vim.opt.termguicolors = true
 
 -- more opinionated

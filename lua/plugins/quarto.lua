@@ -53,7 +53,7 @@ return {
         lspFeatures = {
           enabled = true,
           chunks = 'curly',
-          languages = { 'r', 'python', 'julia', 'bash', 'lua', 'html' },
+          languages = { 'python', 'bash', 'lua', 'html' },
           diagnostics = {
             enabled = true,
             triggers = { "BufWritePost" }
@@ -81,9 +81,9 @@ return {
     config = function()
       require 'nvim-treesitter.configs'.setup {
         ensure_installed = {
-          'r', 'python', 'markdown', 'markdown_inline',
+          'python', 'markdown', 'markdown_inline',
           'julia', 'bash', 'yaml', 'lua', 'vim',
-          'query', 'vimdoc', 'latex', 'html', 'css',
+          'vimdoc', 'latex', 'html', 'css',
         },
         highlight = {
           enable = true,
