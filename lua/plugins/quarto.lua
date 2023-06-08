@@ -82,9 +82,9 @@ return {
     config = function()
       require 'nvim-treesitter.configs'.setup {
         ensure_installed = {
-          'r', 'python', 'markdown', 'markdown_inline',
-          'julia', 'bash', 'yaml', 'lua', 'vim',
-          'query', 'vimdoc', 'latex', 'html', 'css',
+          'python', 'markdown', 'markdown_inline',
+           'yaml', 'lua', 'vim',
+          'vimdoc', 
         },
         highlight = {
           enable = true,

@@ -18,11 +18,7 @@ require("lazy").setup("plugins", {
   defaults = {
     version = "*",
   },
-  dev = {
-    path = "~/projects",
-  },
   install = { colorscheme = { "catppuccin", "habamax" } },
-  -- checker = { enabled = true },
   rtp = {
     disabled_plugins = {
       "gzip",

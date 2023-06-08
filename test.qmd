@@ -1,0 +1,17 @@
+---
+title: test
+---
+# This is a simple title
+
+This is a test
+
+```{python}
+#%%
+import matplotlib.pyplot as plt
+print("hola mundo...")
+plt.plot([1,2,3], [1,2,3])
+
+plt.xlabel("test")
+plt.show()
+#%%
+```
