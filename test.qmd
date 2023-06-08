@@ -1,0 +1,9 @@
+---
+title:test
+---
+
+```{python}
+import numpy as np
+print("hola mundo")
+
+```
