@@ -53,7 +53,7 @@ return {
         lspFeatures = {
           enabled = true,
           chunks = 'curly',
-          languages = { 'python', 'bash', 'lua', 'html' },
+          languages = { 'r', 'python', 'julia', 'bash', 'lua', 'html' },
           diagnostics = {
             enabled = true,
             triggers = { "BufWritePost" }
@@ -81,9 +81,9 @@ return {
     config = function()
       require 'nvim-treesitter.configs'.setup {
         ensure_installed = {
-          'python', 'markdown', 'markdown_inline',
+          'r', 'python', 'markdown', 'markdown_inline',
           'julia', 'bash', 'yaml', 'lua', 'vim',
-          'vimdoc', 'latex', 'html', 'css',
+          'query', 'vimdoc', 'latex', 'html', 'css',
         },
         highlight = {
           enable = true,
@@ -538,7 +538,6 @@ return {
 
       vim.cmd [[
       let g:slime_dispatch_ipython_pause = 100
-      let g:slime_bracketed_paste = 1
       function SlimeOverride_EscapeText_quarto(text)
       call v:lua.Quarto_is_in_python_chunk()
       if exists('g:slime_python_ipython') && len(split(a:text,"\n")) > 1 && b:quarto_is_python_chunk
