@@ -9,13 +9,13 @@ return {
         'jmbuhr/otter.nvim',
         dev = false,
         config = function()
-      --    require 'otter.config'.setup {
-      --      lsp = {
-      --        hover = {
-      --          border = require 'misc.style'.border
-      --        }
-      --      }
-      --    }
+          require 'otter.config'.setup {
+            lsp = {
+              hover = {
+                border = require 'misc.style'.border
+              }
+            }
+          }
         end,
       },
 
@@ -53,7 +53,7 @@ return {
         lspFeatures = {
           enabled = true,
           chunks = 'curly',
-          languages = { 'r', 'python', 'julia', 'bash', 'lua', 'html' },
+          languages = { 'python', 'bash', 'lua', 'html' },
           diagnostics = {
             enabled = true,
             triggers = { "BufWritePost" }
@@ -81,9 +81,9 @@ return {
     config = function()
       require 'nvim-treesitter.configs'.setup {
         ensure_installed = {
-          'r', 'python', 'markdown', 'markdown_inline',
+          'python', 'markdown', 'markdown_inline',
           'julia', 'bash', 'yaml', 'lua', 'vim',
-          'query', 'vimdoc', 'latex', 'html', 'css',
+          'vimdoc', 'latex', 'html', 'css',
         },
         highlight = {
           enable = true,
@@ -218,10 +218,11 @@ return {
         underline = true,
         update_in_insert = false,
       })
-      vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover) -- If remove -- down, remove this line
-        -- ,{ border = require 'misc.style'.border })
-      vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help) -- If remove -- down, remove this line
-        --  ,{ border = require 'misc.style'.border })
+      vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover,
+        { border = require 'misc.style'.border })
+      vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help,
+        { border = require 'misc.style'.border })
+
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
       capabilities.textDocument.completion.completionItem.snippetSupport = true
@@ -509,7 +510,7 @@ return {
         },
         window = {
           documentation = {
-            -- border = require 'misc.style'.border,
+            border = require 'misc.style'.border,
           },
         },
       })
@@ -537,10 +538,11 @@ return {
 
       vim.cmd [[
       let g:slime_dispatch_ipython_pause = 100
+      let g:slime_bracketed_paste = 1
       function SlimeOverride_EscapeText_quarto(text)
       call v:lua.Quarto_is_in_python_chunk()
       if exists('g:slime_python_ipython') && len(split(a:text,"\n")) > 1 && b:quarto_is_python_chunk
-      return ["%cpaste -q\n", g:slime_dispatch_ipython_pause, a:text, "--", "\r\n"]
+      return ["%cpaste -q\n", g:slime_dispatch_ipython_pause, a:text, "--", "\n"]
       else
       return a:text
       end
