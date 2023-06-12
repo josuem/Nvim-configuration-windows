@@ -16,3 +16,19 @@ import matplotlib.pylab as plt
 
 print("test")
 ```
+
+
+::: {.content-hidden when-format="html"}
+
+Will not appear in HTML.
+
+:::
+
+
+::: {.content-hidden }
+
+Will not appear in HTML.
+
+:::
+
+This line if apear
