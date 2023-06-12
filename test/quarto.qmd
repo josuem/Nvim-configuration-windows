@@ -1,0 +1,18 @@
+---
+title: test
+author: josue
+---
+
+# title
+
+$$
+∫_x^a xdx ⋅ α · \frac{\beta}{\gamma}
+$$ {#eq-test}
+
+The @eq-test is a simple equation
+
+```{python}
+import matplotlib.pylab as plt
+
+print("test")
+```
